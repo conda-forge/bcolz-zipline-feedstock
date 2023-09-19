@@ -19,7 +19,7 @@ requirements:
     - {{ compiler('c') }}
   host:
     - python
-    - cython
+    - cython <3
     - numpy
     - toml
     - pip
