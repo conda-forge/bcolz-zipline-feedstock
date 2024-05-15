@@ -17,6 +17,7 @@ build:
 requirements:
   build:
     - {{ compiler('c') }}
+    - {{ stdlib("c") }}
   host:
     - python
     - cython
@@ -24,7 +25,7 @@ requirements:
     - toml
     - pip
     - setuptools
-    - setuptools_scm[toml]
+    - setuptools_scm
   run:
     - python
     - {{ pin_compatible('numpy') }}
