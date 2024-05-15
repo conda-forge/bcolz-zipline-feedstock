@@ -1,5 +1,5 @@
 {% set name = "bcolz-zipline" %}
-{% set version = "1.2.6" %}
+{% set version = "1.2.9" %}
 
 package:
   name: {{ name|lower }}
@@ -7,7 +7,7 @@ package:
 
 source:
   url: https://pypi.io/packages/source/{{ name[0] }}/{{ name }}/bcolz-zipline-{{ version }}.tar.gz
-  sha256: c09ef10714db585d3e22c54efaf825b007c6e413f37af7d2e2ef5a31700d1226
+  sha256: e4da689704593eafd48f0ad57df62cf5a59c6643f180c9cbddc35d4bd35b6aa7
 
 build:
   skip: true  # [py<37]
@@ -19,12 +19,12 @@ requirements:
     - {{ compiler('c') }}
   host:
     - python
-    - cython <3
+    - cython
     - numpy
     - toml
     - pip
     - setuptools
-    - setuptools_scm
+    - setuptools_scm[toml]
   run:
     - python
     - {{ pin_compatible('numpy') }}
