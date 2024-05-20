@@ -12,11 +12,12 @@ source:
 build:
   skip: true  # [py<37]
   script: {{ PYTHON }} -m pip install . -vv
-  number: 0
+  number: 1
 
 requirements:
   build:
     - {{ compiler('c') }}
+    - {{ stdlib("c") }}
   host:
     - python
     - cython
@@ -27,7 +28,6 @@ requirements:
     - setuptools_scm
   run:
     - python
-    - {{ pin_compatible('numpy') }}
 
 test:
   commands:
